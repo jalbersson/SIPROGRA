@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="./../plantillas/frontEndAdministrador.xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <ui:define name="titulo">
+        Añadir estado
+    </ui:define>
+
+    <ui:define name="CuadroDeBotonesSesion">
+        CuadroDeBotonesSesion
+    </ui:define>
+
+    <ui:define name="title">
+        
+    </ui:define>
+
+    <ui:define name="body">
+        <p:tabView orientation="left">
+            <p:tab title="Gestión de Roles">
+            </p:tab>
+            <p:tab title="Gestión de estados de ejecución">
+                <h2>Estados de ejecución</h2>
+                Selecciones un estado existente para editar o cree un nuevo estado de ejecución.<br></br>
+                <h3>Tabla de estados de ejecución</h3>
+                <p:dataTable var="car" value="#{Etapas.etapasEjecucion}">
+                    <p:column headerText="Etapas de la ejecución">
+                        <h:outputText value="#{car.etapa}" />
+                    </p:column>
+
+                    <p:column headerText="Estado">
+                        
+                    </p:column>
+                </p:dataTable>
+            </p:tab>
+            <p:tab title="Gestión de responsabilidades y restriciones">
+                <h2>Responsabilidades y Restricciones</h2>
+                Aquí podrá modificar las responsabilidades de los roles o las restricciones en el workflow.<br></br>
+                <h3>Tabla de responsabilidades y restricciones</h3>
+                <p:dataTable var="car" value="#{Etapas.etapasEjecucion}">
+                    <p:column headerText="Restricción/Responsabilidad">
+                        <h:outputText value="#{car.etapa}" />
+                    </p:column>
+
+                    <p:column headerText="Etapa">
+                        
+                    </p:column>
+                </p:dataTable>
+            </p:tab>
+            <p:tab title="Gestión de documentos">
+                <h2>Documentos asociados</h2>
+                Aquí podra editar o crear un nuevo documento o formato asociado al proceso de trabajo de grado.<br></br>
+                <h3>Tabla de documentos/formatos</h3>
+                <p:dataTable var="car" value="#{Etapas.etapasEjecucion}">
+                    <p:column headerText="Documento/formato">
+                    </p:column>
+
+                    <p:column headerText="Etapa">
+                    </p:column>
+                    
+                    <p:column headerText="Responsable">    
+                    </p:column>
+                </p:dataTable>
+            </p:tab>
+        </p:tabView>
+    </ui:define>
+
+</ui:composition>
