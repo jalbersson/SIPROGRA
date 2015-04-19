@@ -289,18 +289,3 @@ body {
     float:left;
     
 }
-#Contenidotab
-{
-    text-align: center;
-}
-.BotonesInternos
-{
-    padding: 10px;
-}
-#ContenedorProceso
-{
-    width: 800px;
-    height: 400px;
-    border-color: #000000;
-    border-width: medium;
-}

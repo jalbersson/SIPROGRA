@@ -1,0 +1,286 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://services.gesprogra.elkin/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="loginWS" targetNamespace="http://services.gesprogra.elkin/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://services.gesprogra.elkin/" elementFormDefault="unqualified" targetNamespace="http://services.gesprogra.elkin/" version="1.0">
+
+  <xs:element name="count" type="tns:count"/>
+
+  <xs:element name="countResponse" type="tns:countResponse"/>
+
+  <xs:element name="create" type="tns:create"/>
+
+  <xs:element name="edit" type="tns:edit"/>
+
+  <xs:element name="find" type="tns:find"/>
+
+  <xs:element name="findAll" type="tns:findAll"/>
+
+  <xs:element name="findAllResponse" type="tns:findAllResponse"/>
+
+  <xs:element name="findRange" type="tns:findRange"/>
+
+  <xs:element name="findRangeResponse" type="tns:findRangeResponse"/>
+
+  <xs:element name="findResponse" type="tns:findResponse"/>
+
+  <xs:element name="iniciarSesion" type="tns:iniciarSesion"/>
+
+  <xs:element name="iniciarSesionResponse" type="tns:iniciarSesionResponse"/>
+
+  <xs:element name="remove" type="tns:remove"/>
+
+  <xs:element name="usuario" type="tns:usuario"/>
+
+  <xs:complexType name="edit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="entity" type="tns:usuario"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="usuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="contrasena" type="xs:string"/>
+      <xs:element minOccurs="0" name="id" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="rol" type="xs:string"/>
+      <xs:element minOccurs="0" name="usuario" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="create">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="entity" type="tns:usuario"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="find">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:anyType"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:usuario"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="iniciarSesion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="xs:string"/>
+      <xs:element minOccurs="0" name="password" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="iniciarSesionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findRange">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="range" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findRangeResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:usuario"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="findAll">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="findAllResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:usuario"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="remove">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="entity" type="tns:usuario"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="count">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="countResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="remove">
+    <wsdl:part element="tns:remove" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="count">
+    <wsdl:part element="tns:count" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAll">
+    <wsdl:part element="tns:findAll" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="countResponse">
+    <wsdl:part element="tns:countResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findRangeResponse">
+    <wsdl:part element="tns:findRangeResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="iniciarSesion">
+    <wsdl:part element="tns:iniciarSesion" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="create">
+    <wsdl:part element="tns:create" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findRange">
+    <wsdl:part element="tns:findRange" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="edit">
+    <wsdl:part element="tns:edit" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="iniciarSesionResponse">
+    <wsdl:part element="tns:iniciarSesionResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="find">
+    <wsdl:part element="tns:find" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findAllResponse">
+    <wsdl:part element="tns:findAllResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="findResponse">
+    <wsdl:part element="tns:findResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="loginWS">
+    <wsdl:operation name="edit">
+      <wsdl:input message="tns:edit" name="edit">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <wsdl:input message="tns:create" name="create">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="find">
+      <wsdl:input message="tns:find" name="find">
+    </wsdl:input>
+      <wsdl:output message="tns:findResponse" name="findResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iniciarSesion">
+      <wsdl:input message="tns:iniciarSesion" name="iniciarSesion">
+    </wsdl:input>
+      <wsdl:output message="tns:iniciarSesionResponse" name="iniciarSesionResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findRange">
+      <wsdl:input message="tns:findRange" name="findRange">
+    </wsdl:input>
+      <wsdl:output message="tns:findRangeResponse" name="findRangeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAll">
+      <wsdl:input message="tns:findAll" name="findAll">
+    </wsdl:input>
+      <wsdl:output message="tns:findAllResponse" name="findAllResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="remove">
+      <wsdl:input message="tns:remove" name="remove">
+    </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="count">
+      <wsdl:input message="tns:count" name="count">
+    </wsdl:input>
+      <wsdl:output message="tns:countResponse" name="countResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="loginWSSoapBinding" type="tns:loginWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="create">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="create">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="edit">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="edit">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="find">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="find">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="iniciarSesion">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="iniciarSesion">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="iniciarSesionResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findAll">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findAll">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findAllResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="findRange">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="findRange">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="findRangeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="count">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="count">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="countResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="remove">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="remove">
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="loginWS">
+    <wsdl:port binding="tns:loginWSSoapBinding" name="loginWSPort">
+      <soap:address location="http://localhost:8080/webServicesGesProGra/loginWS"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

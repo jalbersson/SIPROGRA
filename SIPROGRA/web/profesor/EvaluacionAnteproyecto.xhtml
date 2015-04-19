@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+
+        <ui:composition template="./../plantillaPrincipal.xhtml">
+
+            <ui:define name="tituloPagina">
+                tituloPagina
+            </ui:define>
+
+            <ui:define name="botonesSesion">
+                <h:form id="sesionForm">
+                    Bienvenido, profesor
+                    <p:commandLink id="cerrarSesionButton"   value="Cerrar Sesion" style="text-decoration: none;color:#FFFFFF;" />
+                </h:form>
+
+            </ui:define>
+
+            <ui:define name="contenido">
+                <h:form id="form">
+
+                    <p:growl id="msgs" showDetail="true" />
+
+                    <p:tabView orientation="left">
+
+                        <p:tab title="Pendientes">
+                            <p:panel header="FORMATO B: Evaluacion aneproyecto #1">
+                                <center>
+                                    <h:panelGrid columns="3" border="0" style="margin-top:20px" cellpadding="10" >
+                                        <p:outputLabel value="A) " for="a" />
+                                        <p:outputLabel value="Presentacion y aportes(Estan indicados con claridad) " for="a" />
+                                        <p:inputText id="a" value="" />
+                                        <p:outputLabel value="B)) " for="b" />
+                                        <p:outputLabel value="Obetivos (Establecidos claramente) " for="b" />
+                                        <p:inputText id="b" value="" />
+                                        <p:outputLabel value="C) " for="c" />
+                                        <p:outputLabel value="Metodologia (Se indica explicitamente)" for="c" />
+                                        <p:inputText id="c" value="" />
+                                        <p:outputLabel value="D) " for="d" />
+                                        <p:outputLabel value="Condicones de entrega (Se establecen claramente)" for="d" />
+                                        <p:inputText id="d" value="" />
+                                        <p:outputLabel value="E) " for="a" />
+                                        <p:outputLabel value="Monografia (Se estructura adecudamente)" for="a" />
+                                        <p:inputText id="e" value="" />
+                                        <p:outputLabel value="F) " for="a" />
+                                        <p:outputLabel value="Cronograma (se indica de forma clara y concreta)" for="a" />
+                                        <p:inputText id="f" value="" />
+                                        <p:outputLabel value="G) " for="a" />
+                                        <p:outputLabel value="Patrocinio(Existe?)" for="a" />
+                                        <p:inputText id="g" value="" />
+                                        <p:outputLabel value="H) " for="a" />
+                                        <p:outputLabel value="Concepto general" for="a" />
+                                        <p:selectOneRadio id="h" value="">
+                                            <f:selectItem itemLabel="Aprobado" itemValue="f" />
+                                            <f:selectItem itemLabel="No Aprobado" itemValue="h" />                                            
+                                        </p:selectOneRadio>
+
+                                        <p:outputLabel value=" " for="a" />
+                                        <p:outputLabel value=" " for="a" />
+                                        <p:splitButton  icon="ui-icon-disk">
+                                            <p:separator />
+                                            <p:menuitem icon="ui-icon-arrowrefresh-1-w" />
+                                                                                        
+                                        </p:splitButton>
+
+                                    </h:panelGrid>
+                                </center>
+                            </p:panel>
+
+                        </p:tab>
+
+                        <p:tab title="Lista de proyectos">
+
+
+                        </p:tab>
+
+                        <p:tab title="Nueva propuesta">
+
+
+                        </p:tab>
+
+                    </p:tabView>
+
+                </h:form>
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>
